@@ -40,7 +40,7 @@ By digitalising the process of finding study partners, Uni-Bridge reduces academ
 
 # MySQL, PHPMyAdmin and Node.js (ready for Express development)
 
-This will install Mysql and phpmyadmin (including all dependencies to run Phpmyadmin) AND node.js
+This will install MySQL and phpmyadmin (including all dependencies to run PhpMyAdmin) AND node.js
 
 This receipe is for development - Node.js is run in using supervisor: changes to any file in the app will trigger a rebuild automatically.
 
