@@ -25,7 +25,7 @@ By digitalising the process of finding study partners, Uni-Bridge reduces academ
 **Persona 1: The International Peer-Learner**
 - Name: Lucky Gurung
 - Background: 1st Year International Student (Software Engineering).
-- Bio: Jin is technically strong in logic and Java, but finds the fast-paced English lectures overwhelming. He is hesitant to ask questions in large groups.
+- Bio: Lucky is technically strong in logic and Java, but finds the fast-paced English lectures overwhelming. He is hesitant to ask questions in large groups.
 - Goal: To find a "Study Buddy" to review lecture notes with once a week to ensure he hasn't missed key technical terms.
 - Exchange Offering: High-level expertise in Java logic and Database design.
 
