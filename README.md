@@ -96,3 +96,12 @@ Once in the database container, you can get a MySQL CLI in the usual way
 ```bash
 mysql -uroot -p<password> 
 ```
+
+## Sprint 1 Kanban Board
+
+Project planning and task tracking for Sprint 1 is managed using a GitHub Kanban board:
+
+https://github.com/users/bhumika1240/projects/1
+
+The board tracks tasks from backlog through to completion and is used by all team members.
+
