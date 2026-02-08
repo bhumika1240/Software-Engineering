@@ -97,7 +97,7 @@ Once in the database container, you can get a MySQL CLI in the usual way
 mysql -uroot -p<password> 
 ```
 
-## Sprint 1 Kanban Board
+## Kanban Board
 
 Project planning and task tracking for Sprint 1 is managed using a GitHub Kanban board:
 
