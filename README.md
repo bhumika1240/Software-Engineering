@@ -8,6 +8,23 @@ Uni-Bridge is a peer-to-peer knowledge exchange platform for university students
 - Avinash Sah Kanu: Ethics & Safety Officer
 - Smarika Singh Thakuri: Product Owner & Scrum Master
 
+## 📍 Quick Navigation
+- [Project Description](#project-description)
+- [User Personas](#user-personas)
+- [Ethical & Safety Framework](#ethical-safety-considerations)
+- [Project Documentation (Meetings & Full Docs)](#-project-documentation)
+- [Technical Setup (Docker Instructions)](#-getting-started-docker)
+- [Kanban Board](#kanban-board)
+
+---
+
+## 📂 Project Documentation
+*For a deep dive into our planning and research, please see the files in our `/docs` folder:*
+
+- **[Meeting Minutes](./docs/meeting.md)**: Logs of our weekly stand-ups and sprint decisions.
+- **[Full Ethical Framework](./docs/ETHICS.md)**: Detailed breakdown of safety and privacy.
+- **[Code of Conduct](./docs/CONDUCT.md)**: Team rules and collaboration standards.
+
 ## Project Description:
 Uni-Bridge is a peer-to-peer "Knowledge Exchange" platform designed specifically for university students. The project aims to bridge the gap between students who excel in certain technical areas and those who require additional support, fostering a collaborative campus community. Unlike traditional tutoring, Uni-Bridge operates on a "Skill-Swap" model, where students can trade their expertise. For example, a student proficient in Frontend design may offer help in exchange for support with Backend logic or Database management.
 
@@ -52,71 +69,36 @@ Include a "Safe Meeting Guide" for first-time sessions.
 **3. Data Privacy (GDPR):**
 We follow "Privacy by Design" principles. Student data (Name, University ID, and Modules) is stored securely in our MySQL database. We only collect the minimum information required to facilitate successful study matches, and we ensure the database is protected within our Docker environment.
 
+---
 
-# MySQL, PHPMyAdmin and Node.js (ready for Express development)
+## 🛠️ Technical Setup & Environment
+> **Lead:** Roman Rai (Backend & Docker)
 
-This will install MySQL and phpmyadmin (including all dependencies to run PhpMyAdmin) AND node.js
+To ensure that every member of **The Gurkhas** can develop, test, and run Uni-Bridge without "version mismatch" errors, we have containerized our entire stack using Docker. This ensures environment parity between Windows, macOS, and Linux users on our team.
 
-This recipe is for development: Node.js is run using supervisor; changes to any file in the app will trigger an automatic rebuild.
+### Quick Start
+1. **Environment Variables:** Copy the provided `env-sample` file to a new file named `.env` to store your local credentials.
+2. **Build the Stack:** Open your terminal in the project root and run:
+   ```bash
+   docker-compose up --build
+3. Local Access:
 
-For security reasons, this recipe uses a .env file to store credentials.  A sample is provided in the env-sample file. If using these files for a fresh project, copy the env-sample file to a file called .env.  Do NOT commit the .env file into your new project for security reasons (in the node package its included in .gitignore so you can't anyway)
+Web App: http://localhost:3000
 
-In Node.js, we use the MySQL2 package (to avoid problems with MySQL8) and the dotenv package to read the environment variables.
+Database Management (phpMyAdmin): http://localhost:8081/  
+What's Under the Hood?
+Our development scaffolding includes:
 
-Local files are mounted into the container using the 'volumes' directive in the docker-compose.yml for ease of development.
+Node.js: Set up with supervisor for automatic hot-reloading (the app refreshes instantly when you save code).
 
-### Super-quickstart your new project:
+MySQL 8.0: A persistent database container for storing user profiles and module data.
 
-* Make sure that you don't have any other containers running using docker ps
-* run ```docker-compose up --build```
+Service Connectivity: We use a pre-configured db.js utility that handles MySQL queries securely using the environment variables defined in your .env.
 
-#### Visit phphmyadmin at:
+---
 
-http://localhost:8081/
+Kanban Board & Project Tracking
+Project planning and task tracking for Sprint 1 is managed using our GitHub Project Board. This allows us to maintain transparency and ensure all ethical and technical requirements are met before moving to development.
 
-#### Visit your express app at:
-
-http://localhost:3000
-
-For reference, see the video at: https://roehampton.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6f290a6b-ba94-4729-9632-adcf00ac336e
-
-NB if you are running this on your own computer rather than the Azure Labs that has been set up for you, you will need to install the following:
-
-* node.js  (Windows: https://nodejs.org/en/download/)
-* Docker Desktop (for Windows, this will also prompt you to install Linux Subsystem for Windows https://docs.docker.com/desktop/windows/install/ )
-
-### Whats provided in these scaffolding files?
-
-
-  * A Docker setup which will provide you with Node.js and phpmyadmin, including the configuration needed so that both Node.js and phpmyadmin can 'see' and connect to your mysql database.  If you don't use docker you'll have to set up and connect each of these components separately.
-  * A basic starting file structure for a Node.js app.
-  * A package.json file that will pull in the Node.js libraries required and start your app as needed.
-  * A db.js file which provides all the code needed to connect to the MySQL database, using the credentials in the .env file, and which provides a query() function that can send queries to the database and receive a result.  To use this (ie, interact with the database, you simply need to include this file in any file you create that needs this database interaction, with the following code:
-
-```const db = require('./services/db');
-```
-
-____
-
-Useful commands:
-
-Get a shell in any of the containers
-
-```bash
-docker exec -it <container name> bash -l
-```
-
-Once in the database container, you can get a MySQL CLI in the usual way
-
-```bash
-mysql -uroot -p<password> 
-```
-
-## Kanban Board
-
-Project planning and task tracking for Sprint 1 is managed using a GitHub Kanban board:
-
-https://github.com/users/bhumika1240/projects/1
-
-The board tracks tasks from backlog through to completion and is used by all team members.
+View our live progress here: The Gurkhas Kanban Board
 
